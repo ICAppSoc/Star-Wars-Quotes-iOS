@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Swift Star View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="SwiftStarViewController" customModule="Star_Wars_Quotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3iu-75-dOO">
+                                <rect key="frame" x="16" y="290" width="568" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZGQ-Aw-9OB">
+                                <rect key="frame" x="263" y="530" width="75" height="30"/>
+                                <state key="normal" title="New quote">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showNewQuote:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="aqf-Z8-45v"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.34901960784313724" green="0.40000000000000002" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="3iu-75-dOO" secondAttribute="centerY" id="G2X-Ae-dml"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ZGQ-Aw-9OB" secondAttribute="bottom" constant="40" id="Mdn-NM-Ac6"/>
+                            <constraint firstItem="3iu-75-dOO" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Xnh-l5-W0D"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3iu-75-dOO" secondAttribute="trailing" id="Yx1-4p-Vwv"/>
+                            <constraint firstAttribute="centerX" secondItem="ZGQ-Aw-9OB" secondAttribute="centerX" id="eQA-F0-Utp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="quoteLabel" destination="3iu-75-dOO" id="c5v-4M-5yb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
