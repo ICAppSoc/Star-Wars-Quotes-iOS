@@ -11,7 +11,6 @@
 @interface StarViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *quoteLabel;
-
 @end
 
 @implementation StarViewController
@@ -20,7 +19,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    // TODO: Complete code
+    // ADDED: When the view loads, show a quote straight away so that our Label (the quoteLabel variable) doesn't just its default text
+    [self showNewQuote:nil];
+}
+
+// ADDED: This method (a function you can call on an object) is for when you tap the Color button. It changes the background of this StarViewController's view to a random color. We can access the view with self.view, where self refers to the StarViewController instance.
+- (IBAction)newColor:(id)sender {
+    self.view.backgroundColor = [UIColor colorWithRed:arc4random_uniform(255)/255.0f green:arc4random_uniform(255)/255.0f blue:arc4random_uniform(255)/255.0f alpha:1.0];
 }
 
 - (IBAction)showNewQuote:(id)sender {
@@ -39,11 +44,16 @@
             return;
         }
         
-        // TODO: Complete code
+        // ADDED: We declare a string variable (NSString object in Objective-C) to hold the quote that we get back from the server.
+        NSString *quote = quoteJSON[@"quote"];
+        // If you want to print out the entire server reply, uncomment the next line
+//        NSLog("%@", quoteJSON);
+        
         
         // UIKit operations involving views need to happen on the main thread
         dispatch_async(dispatch_get_main_queue(), ^{
-            // TODO: Complete code
+            // ADDED: set the text of the label to the new quote we just got off the Internet
+            self.quoteLabel.text = quote;
         });
     }] resume];
 }

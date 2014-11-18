@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Star View Controller-->
@@ -15,8 +16,46 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bF-Ne-1ba">
+                                <rect key="frame" x="262" y="550" width="77" height="30"/>
+                                <state key="normal" title="New Quote">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showNewQuote:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="CUF-Ki-EgP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXd-XS-daN">
+                                <rect key="frame" x="16" y="290" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xy9-xz-cu5">
+                                <rect key="frame" x="281" y="45" width="38" height="30"/>
+                                <state key="normal" title="Color">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="newColor:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dt8-ct-u2Z"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.70196080207824707" green="0.70196080207824707" blue="0.70196080207824707" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="kXd-XS-daN" secondAttribute="centerY" id="0xT-gC-tU3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kXd-XS-daN" secondAttribute="trailing" id="BHa-CW-tqV"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="4bF-Ne-1ba" secondAttribute="bottom" constant="20" id="Yb2-3B-SVI"/>
+                            <constraint firstItem="xy9-xz-cu5" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="25" id="bVa-6A-AGd"/>
+                            <constraint firstItem="kXd-XS-daN" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="fiC-0R-6MP"/>
+                            <constraint firstAttribute="centerX" secondItem="4bF-Ne-1ba" secondAttribute="centerX" id="hUB-lW-Zlg"/>
+                            <constraint firstAttribute="centerX" secondItem="xy9-xz-cu5" secondAttribute="centerX" id="mf2-UO-ouc"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="quoteLabel" destination="kXd-XS-daN" id="dNG-gd-WhK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
